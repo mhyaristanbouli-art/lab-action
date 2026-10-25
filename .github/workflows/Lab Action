@@ -1,5 +1,6 @@
 name: "Lab Action"
 description: "Test action for supply chain experiments"
+
 runs:
   using: "composite"
   steps:
