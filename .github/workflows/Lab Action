@@ -1,9 +1,0 @@
-name: "Lab Action"
-description: "Test action for supply chain experiments"
-
-runs:
-  using: "composite"
-  steps:
-    - name: Default Action Behavior
-      run: echo "Benign action execution."
-      shell: bash
